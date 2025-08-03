@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import LoginFrom from "./LoginForm";
 
 const AuthTabs = () => {
   return (
@@ -10,7 +11,9 @@ const AuthTabs = () => {
         <TabsTrigger value="login">Login</TabsTrigger>
         <TabsTrigger value="register">Register</TabsTrigger>
       </TabsList>
-      <TabsContent value="login">Login</TabsContent>
+      <TabsContent value="login">
+        <LoginFrom />
+      </TabsContent>
       <TabsContent value="register">Register</TabsContent>
     </Tabs>
   );
