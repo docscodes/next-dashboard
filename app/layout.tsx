@@ -2,8 +2,6 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,13 +36,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <div className="flex">
-            <div className="hidden md:block min-h-screen w-[300px]">
-              <Sidebar />
-            </div>
-            <div className="p-5 w-full md:max-w[1140px]">{children}</div>
-          </div>
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>
