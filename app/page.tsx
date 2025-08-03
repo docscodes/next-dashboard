@@ -29,7 +29,7 @@ export default function Home() {
         />
       </div>
 
-      <PostsTable />
+      <PostsTable title='Latest Posts' limit={5} />  
     </>
   );
 }
