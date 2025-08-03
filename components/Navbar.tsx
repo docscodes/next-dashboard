@@ -1,3 +1,4 @@
+import ThemeToggler from "@/components/ThemeToggler";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,33 +19,36 @@ const Navbar = () => {
         <Image
           src={logo}
           alt="Logo"
-          width={50}
-          height={50}
+          width={30}
+          height={30}
         />
       </Link>
 
-      <DropdownMenu>
-        <DropdownMenuTrigger className="focus:outline-none">
-          <Avatar>
-            <AvatarImage
-              src="https://github.com/shadcn.png?size=50"
-              alt="@shadcn"
-              className="rounded-full"
-            />
-            <AvatarFallback>BT</AvatarFallback>
-          </Avatar>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link href="/profile">Profile</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href="/auth">Logout</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className="flex items-center">
+        <ThemeToggler />
+        <DropdownMenu>
+          <DropdownMenuTrigger className="focus:outline-none">
+            <Avatar>
+              <AvatarImage
+                src="https://github.com/shadcn.png?size=30"
+                alt="@shadcn"
+                className="rounded-full"
+              />
+              <AvatarFallback>BT</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Link href="/profile">Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/auth">Logout</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 };
