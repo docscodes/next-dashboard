@@ -1,6 +1,7 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/logo.svg";
+import logo from "../../public/logo.png";
 
 const Navbar = () => {
   return (
@@ -8,6 +9,10 @@ const Navbar = () => {
       <Link href="/">
         <Image src={logo} alt="Logo" width={50} height={50} />
       </Link>
+      <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png?size=50" alt="@shadcn" />
+        <AvatarFallback>BT</AvatarFallback>
+      </Avatar>
     </div>
   );
 };
