@@ -14,13 +14,13 @@ import logo from "../public/logo.png";
 
 const Navbar = () => {
   return (
-    <div className="bg-primary dark:bg-slate-700 text-white py-2 px-5 flex justify-between">
+    <div className="bg-navbar dark:bg-slate-800 text-white py-2 px-5 flex justify-between">
       <Link href="/">
         <Image
           src={logo}
           alt="Logo"
-          width={30}
-          height={30}
+          width={50}
+          height={50}
         />
       </Link>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
           <DropdownMenuTrigger className="focus:outline-none">
             <Avatar>
               <AvatarImage
-                src="https://github.com/shadcn.png?size=30"
+                src="https://github.com/shadcn.png?size=40"
                 alt="@shadcn"
                 className="rounded-full"
               />
