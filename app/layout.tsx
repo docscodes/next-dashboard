@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "../components/Navbar";
@@ -34,6 +35,7 @@ export default function RootLayout({
           </div>
           <div className="p-5 w-full md:max-w[1140px]">{children}</div>
         </div>
+        <Toaster />
       </body>
     </html>
   );
