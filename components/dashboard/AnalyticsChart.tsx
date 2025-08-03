@@ -1,15 +1,5 @@
 'use client';
 
-import React, { useState } from "react";
-
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  ResponsiveContainer,
-} from 'recharts';
 import {
   Card,
   CardContent,
@@ -24,7 +14,16 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
+import { useState } from "react";
+import {
+  CartesianGrid,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+} from 'recharts';
 
 import data from '@/data/analytics';
 
@@ -53,6 +52,7 @@ const AnalyticsChart = () => {
         <CardHeader>
           <CardTitle>Analytics For This Year</CardTitle>
           <CardDescription>Views Per Month</CardDescription>
+          
           <Select onValueChange={setSelection} defaultValue="pv">
           <SelectTrigger className="w-96 h-8">
             <SelectValue placeholder="Select Account" />
@@ -68,6 +68,7 @@ const AnalyticsChart = () => {
           </SelectContent>
         </Select>
         </CardHeader>
+        
         <CardContent>
           <div style={{ width: '100%', height: 300 }}>
             <ResponsiveContainer>
