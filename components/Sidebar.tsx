@@ -6,17 +6,10 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut
-} from '@/components/ui/command';
-import {
-  CreditCard,
-  Folders,
-  LayoutDashboard,
-  Newspaper,
-  Settings,
-  User,
-} from 'lucide-react';
-import Link from 'next/link';
+  CommandShortcut,
+} from "@/components/ui/command";
+import { CreditCard, Folders, LayoutDashboard, Newspaper, Settings, User } from "lucide-react";
+import Link from "next/link";
 
 const Sidebar = () => {
   return (

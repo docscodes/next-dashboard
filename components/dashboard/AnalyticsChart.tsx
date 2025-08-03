@@ -1,12 +1,6 @@
-'use client';
+"use client";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -16,16 +10,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
-import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-} from 'recharts';
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
-import data from '@/data/analytics';
+import data from "@/data/analytics";
 
 const availableFilters = [
   {
@@ -39,11 +26,10 @@ const availableFilters = [
   {
     value: "amt",
     label: "Amount",
-  }
-]
+  },
+];
 
 const AnalyticsChart = () => {
-
   const [selection, setSelection] = useState("pv");
 
   return (
@@ -52,30 +38,44 @@ const AnalyticsChart = () => {
         <CardHeader>
           <CardTitle>Analytics For This Year</CardTitle>
           <CardDescription>Views Per Month</CardDescription>
-          
-          <Select onValueChange={setSelection} defaultValue="pv">
-          <SelectTrigger className="w-96 h-8">
-            <SelectValue placeholder="Select Account" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-             {availableFilters.map((filter) => (
-                <SelectItem key={filter.value} value={filter.value}>
-                  {filter.label}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+
+          <Select
+            onValueChange={setSelection}
+            defaultValue="pv"
+          >
+            <SelectTrigger className="w-96 h-8">
+              <SelectValue placeholder="Select Account" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {availableFilters.map((filter) => (
+                  <SelectItem
+                    key={filter.value}
+                    value={filter.value}
+                  >
+                    {filter.label}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </CardHeader>
-        
+
         <CardContent>
-          <div style={{ width: '100%', height: 300 }}>
+          <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer>
-              <LineChart width={1100} height={300} data={data}>
-                <Line type='monotone' dataKey={selection} stroke='#8884d8' />
-                <CartesianGrid stroke='#ccc' />
-                <XAxis dataKey='name' />
+              <LineChart
+                width={1100}
+                height={300}
+                data={data}
+              >
+                <Line
+                  type="monotone"
+                  dataKey={selection}
+                  stroke="#8884d8"
+                />
+                <CartesianGrid stroke="#ccc" />
+                <XAxis dataKey="name" />
                 <YAxis />
               </LineChart>
             </ResponsiveContainer>

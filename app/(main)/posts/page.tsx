@@ -5,7 +5,10 @@ import PostsTable from "@/components/posts/PostsTable";
 const PostsPage = () => {
   return (
     <>
-      <BackButton text="Go Back" link="/" />
+      <BackButton
+        text="Go Back"
+        link="/"
+      />
       <PostsTable />
       <PostsPagination />
     </>
